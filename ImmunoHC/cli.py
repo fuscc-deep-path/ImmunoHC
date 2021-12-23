@@ -52,7 +52,7 @@ def cli():
               help="How many workers (default: 4)?", default=4, type=int)
 @click.option('--batch-size', '-b', required=False,
               help="Batch size (default: 256)?", default=256, type=int)
-def single_prediction(datapath, sampling_file, root_dir, model_type, seed, gpu, net, num_classes, num_workers, batch_size):
+def prediction(datapath, sampling_file, root_dir, model_type, seed, gpu, net, num_classes, num_workers, batch_size):
     """To predict with the specified model."""
     start_prediction_model(datapath, sampling_file=sampling_file, root_dir=root_dir, model_type=model_type,
                            seed=seed, gpu=gpu, net=net, num_classes=num_classes, num_workers=num_workers, batch_size=batch_size)
@@ -78,7 +78,7 @@ def single_prediction(datapath, sampling_file, root_dir, model_type, seed, gpu, 
               help="Which gpu(s) (default: '0')?", default='0')
 @click.option('--num-classes', '-n', required=False,
               help="How many classes (default: 2)?", default=2, type=int)
-def single_heatmap(datapath, feats_file, sampling_file, root_dir, model_type, gpu, num_classes):
+def heatmap(datapath, feats_file, sampling_file, root_dir, model_type, gpu, num_classes):
     """To make a heatmap for the selected image patches."""
     start_single_heatmap(datapath, featsfile=feats_file, sampling_file=sampling_file,
                          root_dir=root_dir, model_type=model_type, gpu=gpu, num_classes=num_classes)
