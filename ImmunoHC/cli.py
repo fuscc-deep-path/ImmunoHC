@@ -72,8 +72,8 @@ def single_prediction(datapath, sampling_file, root_dir, model_type, seed, gpu, 
               type=click.Path(exists=True, dir_okay=True),
               help="The root directory which to save result files.")
 @click.option('--model-type', '-m', required=False,
-              help="The model type for prediction (default: PIK3CA_Mutation).",
-              default='PIK3CA_Mutation', type=click.Choice(['PIK3CA_Mutation', 'BLIS', 'IM', 'LAR',  'MES']))
+              help="The model type for prediction (default: HER2).",
+              default='HER2', type=click.Choice(['HER2', 'HR']))
 @click.option('--gpu', '-g', required=False,
               help="Which gpu(s) (default: '0')?", default='0')
 @click.option('--num-classes', '-n', required=False,
