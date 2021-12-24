@@ -88,5 +88,5 @@ def get_modelpath(model_name):
         }
     }
 
-    model_path = model.get(model_name)
+    model_path = model.get(model_name).get('model')
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models', model_path)

@@ -25,6 +25,10 @@ def start_model(datapath, sampling_file, root_dir, model_type, seed=2020, gpu="0
       patient.json: ${root_dir}/${model_type}/patient.json
       patient.npz: ${root_dir}/${model_type}/patient.npz
     """
+    result_dir = os.path.join(root_dir, model_type)
+    if not os.path.exists(result_dir):
+        os.makedirs(result_dir)
+
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
